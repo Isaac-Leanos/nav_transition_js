@@ -11,8 +11,8 @@ var work =  function(){
     
     var step =  function() {
             here.animate([ 
-                {  height:'30px', opacity: 1  }, // initial styling
-                {  height:'15px', opacity: 1  }, // half way styling
+                {  height:'30px', opacity: 1  }, // default styling with open navbar
+                {  height:'15px', opacity: 1  }, // half way styling 
                 {  height:'0px',  opacity: 0 },  // navbar closed    
             ],{duration: 1000, easing: 'ease-in-out', fill: 'forwards'})
     }
@@ -27,9 +27,9 @@ var work2 =  function(){
 
     var step =  function() {
             here.animate([ 
-                {  height:'0px', opacity: 0 }, // initial styling; navbar closed
+                {  height:'0px', opacity: 0 }, // styling with navbar closed
                 {  height:'15px', opacity: 0  }, // halfway styling
-                {  height:'30px',  opacity: 1 }, // navbar open      
+                {  height:'30px',  opacity: 1 }, // navbar back open      
             ],{duration: 1000, easing: 'ease-in-out', fill: 'forwards'})
     }
 
