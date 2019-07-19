@@ -1,4 +1,4 @@
-// I couldn't get it to toggle, so thats why there are two buttons for animation close and animation off.
+// I couldn't get it to toggle, so thats why there are two buttons for animation close and animation open.
 
 
 
