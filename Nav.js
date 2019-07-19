@@ -1,6 +1,13 @@
 // I couldn't get it to toggle, so thats why there are two buttons for animation close and animation open.
 
+// window.requestAnimationFrame = window.requestAnimationFrame
+//     || window.mozRequestAnimationFrame
+//     || window.webkitRequestAnimationFrame
+//     || window.msRequestAnimationFrame
+//     || function(f){return setTimeout(f, 1000/60)} 
 
+
+// -------------------------------------
 
 var button = document.querySelector(".but1");
 var button2 = document.querySelector(".but2");
