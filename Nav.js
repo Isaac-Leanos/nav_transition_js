@@ -13,7 +13,7 @@ var work =  function(){
             here.animate([ 
                 {   height:'30px', opacity: 1  },
                 {   height:'15px', opacity: 1  },
-                { height:'0px',  opacity: 0 }, //start        
+                { height:'0px',  opacity: 0 },       
             ],{duration: 1000, easing: 'ease-in-out', fill: 'forwards'})
     }
 
@@ -29,7 +29,7 @@ var work2 =  function(){
             here.animate([ 
                 {   height:'0px', opacity: 0 },
                 {   height:'15px', opacity: 0  },
-                { height:'30px',  opacity: 1 }, //start        
+                { height:'30px',  opacity: 1 },       
             ],{duration: 1000, easing: 'ease-in-out', fill: 'forwards'})
     }
 
