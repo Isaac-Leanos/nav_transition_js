@@ -1,51 +1,27 @@
-// I couldn't get it to toggle, so thats why there are two buttons for animation close and animation open.
-
-// window.requestAnimationFrame = window.requestAnimationFrame
-//     || window.mozRequestAnimationFrame
-//     || window.webkitRequestAnimationFrame
-//     || window.msRequestAnimationFrame
-//     || function(f){return setTimeout(f, 1000/60)} 
-
-
-// -------------------------------------
-
-var button = document.querySelector(".but1");
-var button2 = document.querySelector(".but2");
-
-
-var work =  function(){
-    var here =  document.querySelector(".header");
-    
-    var step =  function() {
-            here.animate([ 
-                {  height:'30px', opacity: 1  }, // default styling with open navbar
-                {  height:'15px', opacity: 1  }, // half way styling 
-                {  height:'0px',  opacity: 0 },  // navbar closed    
-            ],{duration: 1000, easing: 'ease-in-out', fill: 'forwards'})
-    }
-
-       window.requestAnimationFrame(step); //Tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint.
-    // }
-}
-
-
-var work2 =  function(){
-    var here =  document.querySelector(".header");
-
-    var step =  function() {
-            here.animate([ 
-                {  height:'0px', opacity: 0 }, // styling with navbar closed
-                {  height:'15px', opacity: 0  }, // halfway styling
-                {  height:'30px',  opacity: 1 }, // navbar back open      
-            ],{duration: 1000, easing: 'ease-in-out', fill: 'forwards'})
-    }
-
-       window.requestAnimationFrame(step); //Tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint.
-   
-}
-
-
-
-
-button.addEventListener('click',work);
-button2.addEventListener('click',work2);
+//line 603
+settingsWait = waitForElement('[data-hook="settings"]');
+				settingsWait.then(function (settingButton) {
+					navBar = document.getElementsByClassName('header')[0];
+					navBar.id='nothidden';
+					hideNavBar = document.createElement('button');
+					hideNavBar.innerText = (navBar.hasAttribute("id") ? 'Show NavBar' : 'Hide NavBar');
+					hideNavBar.onclick = function () {						
+						if (navBar.hasAttribute("id")) { // if(navBar.hidden)
+							navBar.style.transition = "height 0.3s";
+							navBar.style.height = "35px";
+							navBar.removeAttribute('id'); 
+							// navBar.style.transition = "height 0.3s";
+							hideNavBar.innerText = 'Hide NavBar';
+						}
+						else { 
+							navBar.style.transition = "height 0.3s";
+							navBar.setAttribute("id","nothidden");
+							navBar.style.height = "0px";
+							hideNavBar.innerText = 'Show NavBar';
+							}
+					}
+					
+					addonSettingsPopup('game-view');
+					settingButton.parentNode.appendChild(hideNavBar);
+				})
+// line 627
